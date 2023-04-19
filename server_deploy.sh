@@ -6,7 +6,7 @@ echo "🚀 Deploying application ..."
 # Enter maintanance mode
 php artisan down
     # Update codebase
-    git pull origin develop
+    git pull origin master
 
     # Set permission
     echo "🚀 Set permission ..."
@@ -17,7 +17,7 @@ php artisan down
     # Install dependencies based on lock file
     echo "🚀 Install dependencies based on lock file ..."
     rm -rf .env
-    cp .env.deploy .env
+    cp .env.example .env
     composer install --ignore-platform-reqs
 
     # Migrate database
