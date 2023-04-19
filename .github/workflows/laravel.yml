@@ -4,6 +4,8 @@ on:
   pull_request:
     branches: [ master ]
     types: [ closed ]
+  push:
+    branches: [ master ]
 
 jobs:
   deploy-and-build:
