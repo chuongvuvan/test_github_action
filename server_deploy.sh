@@ -23,7 +23,6 @@ php artisan down
     # Migrate database
     echo "🚀 Migrate database ..."
     php artisan key:generate
-    php artisan migrate --force
     php artisan storage:link
 
 #    # FRONTEND BUILD
