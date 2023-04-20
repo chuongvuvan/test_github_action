@@ -4,6 +4,8 @@ namespace App\Console;
 
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
+use App\Mail\SampleMail;
+use Illuminate\Support\Facades\Mail;
 
 class Kernel extends ConsoleKernel
 {
@@ -17,7 +19,9 @@ class Kernel extends ConsoleKernel
     {
         // $schedule->command('inspire')->hourly();
 //        $schedule->command('command:name')->everyFiveMinutes();
-
+        $schedule->call(function () {
+            Mail::to('chuongvu2806@gmail.com')->send(new SampleMail());
+        })->everyFiveMinutes();
     }
 
     /**
